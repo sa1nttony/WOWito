@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости за последнюю неделю</title>
+</head>
+
+<body>
+{% for new in news %}
+    {% if not new.sended %}
+        <h2>{{ new.header }}</h2>
+        <h3>{{ new.text }}</h3>
+        <hr>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Отклик на объявление' %} {{ object }}
+{% endblock title %}
+
+{% block header %}
+{% trans 'Отклик на объявление' %} {{ object }}
+{% endblock header %}
+
+{% block body %}
+<div class="row">
+    <div style="col-lg-12">
+        <div class="jumbotron">
+            <div style="text-align: center">
+                <h3>{% trans 'Создание отклика' %}</h3>
+                <hr>
+                {% if player.confirmed == True %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-default" value="{% trans 'Сохранить' %}" />
+                </form>
+                {% else %}
+                <h3>{% trans 'Оставить отклик могут только пользователи с подтвержденным аккаунтом' %}
+                    <a href="/accounts/activate">{% trans 'Перейти на страницу активации' %}</a></h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

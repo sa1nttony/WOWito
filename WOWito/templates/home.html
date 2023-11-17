@@ -1,0 +1,40 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+
+{% block header %}
+{% if user.is_authenticated %}
+{% trans 'Добро пожаловать, ' %} {{ user.get_username }}
+{% else %}
+{% trans 'Главная' %}
+{% endif %}
+{% endblock header %}
+
+{% block title %}
+{% if user.is_authenticated %}
+{% trans 'Добро пожаловать, ' %} {{ user.get_username }}
+{% else %}
+{% trans 'Главная' %}
+{% endif %}
+{% endblock title %}
+
+{% block body %}
+<div class="row">
+    <div style="col-lg-12">
+        <div class="jumbotron">
+            <div style="text-align: center">
+                {% if not user.is_authenticated %}
+                    <h2>{% trans 'На нашей торговой площадке вы можете найти и опубликовать все, что вам нужно' %}</h2>
+                {% else %}
+                    {% if player.confirmed == True %}
+                        <h2>{% trans 'На нашей торговой площадке вы можете найти и опубликовать все, что вам нужно' %}</h2>
+                    {% else %}
+                        <h2>{% trans 'Ваш аккаунт не активирован' %}.
+                            <br>
+                            <a href="/accounts/activate">--> {% trans 'Перейти на страницу активации' %} <-- </a></h2>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

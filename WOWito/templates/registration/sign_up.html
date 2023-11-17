@@ -1,0 +1,21 @@
+{% extends "flatpages/default.html" %}
+
+{% load i18n %}
+
+{% block title %}
+{% trans 'Регистрация' %}
+{% endblock title %}
+
+{% block header %}
+{% trans 'Регистрация' %}
+{% endblock header %}
+
+{% block body %}
+
+<form method="post">
+{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Sing up">
+</form>
+
+{% endblock body %}

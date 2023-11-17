@@ -1,0 +1,69 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_tags %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Новости' %}
+{% endblock title %}
+
+{% block header %}
+{% trans 'Новости' %}
+{% endblock header %}
+
+{% block body %}
+<h1>{% trans 'Все новости' %}</h1>
+
+<form action="" method="get">
+    {{ filterset.form.as_p }}
+    <input type="submit" class="btn btn-default" value="{% trans 'Найти' %}">
+</form>
+<hr>
+<div class="row">
+    <div style="col-lg-12">
+        <div class="jumbotron">
+            <div style="text-align: center">
+{% if news %}
+<div style="text-align: center">
+        {% for new in news %}
+            <a href="{{ announcements_detail.pk }}"><h3><strong>{{ new.header }}</strong></h3></a>
+    <br>
+    <br>
+            {{ new.text |truncatechars:200}}
+
+<hr>
+        {% endfor %}
+    {% else %}
+    {% trans 'Новости не найдены' %}
+{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-12">
+    <div>
+        <ul class="pagination pagination-lg">
+            {% if page_obj.has_previous %}
+            <li><a href="?{% url_replace page=page_obj.previous_page_number %}">&laquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for p in paginator %}
+            {% if p.number == page_obj.number %}
+            <li class="active"><a href="?{% url_replace page=p.number %}">{{ p.number }}</a></li>
+            {% else %}
+            <li><a href="?{% url_replace page=p.number %}">{{ p.number }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li><a href="?{% url_replace page=page_obj.next_page_number %}">»</a></li>
+            {% else %}
+            <li class="disabled"><span>»</span></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+{% endblock body %}

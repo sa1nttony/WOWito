@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+{% load i18n %}
+{% load custom_filters %}
+
+<body>
+{% trans 'Добрый день' %}, {{ user }}!
+{% trans 'Пользователь' %} {{ announcement_owner }} {% trans 'рассмотрел ваш отклик на объявление' %} {{ announcement_heade }}.
+{% trans 'Ваш отклик' %} {{ status|status_translator }}
+<h3><a href="{{ redirect_url }}">{% trans 'Перейти к объявлению' %}</a></h3>
+</body>
+</html>

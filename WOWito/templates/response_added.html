@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans 'Новый отклик на ваше объявление' %}</title>
+</head>
+
+<body>
+<h2>{% trans 'Пользователь с ником' %} {{ author }} {% trans 'опубликовал отклик на ваше объявление' %} "{{ header }}"</h2>
+<br>
+<h3><a href="{{ redirect_url }}">{% trans 'Перейти к объявлению' %}</a></h3>
+</body>
+</html>

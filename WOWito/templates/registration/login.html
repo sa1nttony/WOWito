@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html' %}
+
+{% load i18n %}
+
+{% block title %}
+{% trans 'Вход в аккаунт' %}
+{% endblock title %}
+
+{% block header %}
+{% trans 'Вход в аккаунт' %}
+{% endblock header %}
+
+{% block body %}
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans 'Войти' %}">
+    <input type="hidden" name="next" value="{{ next }}">
+</form>
+{% endblock body %}

@@ -1,0 +1,32 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+
+{% block header %}
+{% trans 'Код подтверждения' %}
+{% endblock header %}
+
+{% block title %}
+{% trans 'Код подтверждения' %}
+{% endblock title %}
+
+{% block body %}
+<div class="row">
+    <div style="col-lg-12">
+        <div class="jumbotron">
+            <div style="text-align: center">
+{% if player.confirmed == True %}
+<h1> {% trans 'Ваш аккаунт успешно подтвержден' %}!
+    <br>
+    <a href="/announcements/">{% trans 'Перейти к списку объявлений' %}</a></h1>
+{% else %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-default" value="{% trans 'Сохранить' %}" />
+</form>
+{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

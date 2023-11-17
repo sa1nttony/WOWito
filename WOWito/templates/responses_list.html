@@ -1,0 +1,64 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% block title %}
+{% trans 'Мой аккаунт' %}
+{% endblock title %}
+
+{% block header %}
+{% trans 'Мой аккаунт' %}
+{% endblock header %}
+
+{% block body %}
+<h2>
+    <strong>{% trans 'Личная страница игрока' %}</strong>: {{ user.username }}
+<br>
+<strong>{% trans 'Класс игрока' %}</strong>: {{ player.role|roles_translator }}
+</h2>
+<hr>
+<h3>{% trans 'Объявления и отклики' %}:</h3>
+<form action="" method="get">
+    {{ filterset.form.as_p }}
+    <input type="submit" class="btn btn-default" value="{% trans 'Найти' %}">
+</form>
+<hr>
+{% for response in responses %}
+    {% if response.announcement.author == player %}
+        <h3>{% trans 'Отклик на объявление' %}</h3>
+        <div class="row">
+            <div style="col-lg-12">
+                <div class="jumbotron">
+                    <div style="text-align: center">
+                        <a href="/announcements/{{ response.announcement.pk }}"><h3>{{ response.announcement.header }} </h3></a>
+                        {{ response.announcement.body|safe }}
+                            <a href="/announcements/{{announcement.pk}}/update/">{% trans 'Изменить' %}</a>
+                            <a href="/announcements/{{announcement.pk}}/delete/">{% trans 'Удалить' %}</a>
+                            <hr>
+                                    <strong>{% trans 'Автор' %}:</strong> {{ response.author.user.username }}
+                                    <br>
+                                        <div class="well well-lg">
+                                            <strong>{% trans 'Отклик' %}</strong>:
+                                            <br>
+                                            <i>"{{ response.text }}"</i>
+                                            <hr>
+                                            <strong>{% trans 'Статус' %}</strong>: {{ response.status|status_translator }}
+                                             <br>
+                                            <a href="/responses/{{ response.pk }}/delete">{% trans 'Удалить' %}</a>
+                                        </div>
+                                    {% if response.status == 'NC' %}
+                                        <form method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="response_id" value="{{ response.pk }}"/>
+                                            <button name="action" value="agree" class="btn btn-primary">{% trans 'Принять' %}</button>
+                                            <button name="action" value="decline" class="btn btn-danger">{% trans 'Отклонить' %}</button>
+                                        </form>
+                                    {% endif %}
+                                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock body %}

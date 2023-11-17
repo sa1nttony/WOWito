@@ -1,0 +1,23 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Нет доступа' %}
+{% endblock title %}
+
+{% block header %}
+{% trans 'Нет доступа' %}
+{% endblock header %}
+
+{% block body %}
+<div class="row">
+    <div style="col-lg-12">
+        <div class="jumbotron">
+            <div style="text-align: center">
+                <h1>{% trans 'Упс, кажется у вас нет доступа к данной странице' %}</h1>
+                <h3><a href="/announcements/">----> {% trans 'Вернуться к списку объявлений' %} <----</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

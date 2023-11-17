@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-07 18:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: board/filters.py:11
+msgid "Игровой класс"
+msgstr "Role"
+
+#: board/filters.py:12
+msgid "Любой"
+msgstr "Any"
+
+#: board/froms.py:9 templates/players.html:23
+msgid "Имя пользователя"
+msgstr "Username"
+
+#: board/froms.py:10
+msgid "Класс персонажа"
+msgstr "Role"
+
+#: board/templatetags/custom_filters.py:10
+msgid "Танк"
+msgstr "Tank"
+
+#: board/templatetags/custom_filters.py:11
+msgid "Лекарь"
+msgstr "Heal"
+
+#: board/templatetags/custom_filters.py:12
+msgid "Боец"
+msgstr "Damage Dealer"
+
+#: board/templatetags/custom_filters.py:13
+msgid "Торговец"
+msgstr "Trader"
+
+#: board/templatetags/custom_filters.py:14
+msgid "Мастер гильдии"
+msgstr "Guild Master"
+
+#: board/templatetags/custom_filters.py:15
+msgid "Квестодатель"
+msgstr "Quest Giver"
+
+#: board/templatetags/custom_filters.py:16
+msgid "Кузнец"
+msgstr "Blacksmith"
+
+#: board/templatetags/custom_filters.py:17
+msgid "Кожевник"
+msgstr "Taner"
+
+#: board/templatetags/custom_filters.py:18
+msgid "Зельевар"
+msgstr "Potion Maker"
+
+#: board/templatetags/custom_filters.py:19
+msgid "Мастер заклинаний"
+msgstr "Potion Maker"
+
+#: fpages/admin.py:11
+msgid "Advanced options"
+msgstr ""
+
+#: templates/flatpages/default.html:33
+msgid "Торговая площадка Азерота"
+msgstr "Market place of Azeroth"
+
+#: templates/flatpages/default.html:52
+msgid "Главная"
+msgstr "Main"
+
+#: templates/flatpages/default.html:56
+msgid "Новости"
+msgstr "News"
+
+#: templates/flatpages/default.html:57
+msgid "Сообщество"
+msgstr "Community"
+
+#: templates/flatpages/default.html:59
+msgid "Объявления"
+msgstr "Announcement"
+
+#: templates/flatpages/default.html:61
+msgid "Список объявлений"
+msgstr "Announcement list"
+
+#: templates/flatpages/default.html:63
+msgid "Мои объявления"
+msgstr "My announcement"
+
+#: templates/flatpages/default.html:64
+msgid "Мои отклики"
+msgstr "My responses"
+
+#: templates/flatpages/default.html:66
+msgid "Подать объявление"
+msgstr "Make announcement"
+
+#: templates/flatpages/default.html:91 templates/flatpages/default.html:93
+msgid "Аккаунт"
+msgstr "Account"
+
+#: templates/flatpages/default.html:95
+msgid "Вход"
+msgstr "Sign in"
+
+#: templates/flatpages/default.html:96
+msgid "Регистрация"
+msgstr "Sign up"
+
+#: templates/flatpages/default.html:97
+msgid "Выход из аккаунта"
+msgstr "Log out"
+
+#: templates/flatpages/default.html:99
+msgid "Мой аккаунт"
+msgstr "My account"
+
+#: templates/players.html:8
+msgid "Игроки"
+msgstr "Players"
+
+#: templates/players.html:12
+msgid "Все игроки"
+msgstr "All players"
+
+#: templates/players.html:16
+msgid "Найти"
+msgstr "Search"
+
+#: templates/players.html:24
+msgid "Эл.почта"
+msgstr "Email"
+
+#: templates/players.html:25
+msgid "Класс игрока"
+msgstr "Role"
+
+#: templates/players.html:36
+msgid "Игроки не найдены"
+msgstr "Players not found"
